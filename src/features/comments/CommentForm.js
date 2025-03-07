@@ -4,7 +4,7 @@ import { Formik, Field, Form, ErrorMessage } from "formik";
 import { validateCommentForm } from "../../utils/validateCommentForm";
 
 const CommentForm = ( {campsiteId }) =>  {
-    const [modalOpen, setModelOpen] = useState(false);
+    const [modalOpen, setModalOpen] = useState(false);
 
     const handleSubmit = (values) => {
         const comment = {
@@ -15,16 +15,16 @@ const CommentForm = ( {campsiteId }) =>  {
             author: values.author
         };
         console.log(comment);
-        setModelOpen(false);
+        setModalOpen(false);
     }
 
     return (
         <>
-            <Button outline onClick={() => setModelOpen(true)}>
+            <Button outline onClick={() => setModalOpen(true)}>
                 <i className='fa fa-pencil fa-lg' /> Add Comment
             </Button>
             <Modal isOpen={modalOpen}>
-                <ModalHeader toggle={() => setModelOpen(false)}>
+                <ModalHeader toggle={() => setModalOpen(false)}>
                     Add Comment
                 </ModalHeader>
                 <ModalBody>
